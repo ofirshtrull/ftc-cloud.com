@@ -31,6 +31,15 @@ header {
     color: white;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo img {
+    width: 120px;
+    /* Reduced size for the main logo */
+    max-width: 100%;
+    /* Ensures it scales responsively */
+    height: auto;
 }
 
 nav ul {
@@ -41,7 +50,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
