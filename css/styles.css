@@ -18,7 +18,6 @@ p {
     line-height: 1.6;
 }
 
-/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -32,10 +31,6 @@ header {
     color: white;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-header .logo img {
-    width: 150px;
 }
 
 nav ul {
@@ -68,10 +63,6 @@ nav ul li a:hover {
     color: white;
 }
 
-.hero h1 {
-    font-size: 3rem;
-}
-
 .tagline {
     font-size: 1.5rem;
     margin: 10px 0;
@@ -96,15 +87,82 @@ nav ul li a:hover {
     background-color: #ffb700;
 }
 
-/* Sections */
-.section {
+/* Services Section */
+.services-section {
+    background: linear-gradient(135deg, #f0f4f7 0%, #ffffff 100%);
     padding: 80px 0;
-    text-align: center;
+    border-radius: 10px;
 }
 
-.section h2 {
+.services-section h2 {
+    font-size: 2rem;
+    color: #0073e6;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.service-category {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-category::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #0073e6, #1fa2ff);
+}
+
+.service-category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #0073e6;
+}
+
+.service-category p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.service-category p+p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #777;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.about-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #0073e6;
 }
 
 /* Tech Stack Section */
@@ -112,39 +170,28 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    text-align: center;
+    text-align: left;
     margin-top: 30px;
     padding: 20px;
     background-color: #f9f9f9;
-    /* Subtle background to add contrast */
     border-radius: 10px;
 }
 
 .tech-category {
     background: #fff;
-    padding: 30px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Adding more depth */
-    transition: transform 0.3s, box-shadow 0.3s;
-    /* Subtle hover effect */
-}
-
-.tech-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    /* More prominent hover effect */
+    text-align: center;
 }
 
 .tech-icon {
     width: 60px;
-    /* Increased icon size */
     margin-bottom: 20px;
 }
 
 .tech-category h3 {
-    font-size: 1.5rem;
-    /* Increased title font size */
+    font-size: 1.4rem;
     margin-bottom: 15px;
     color: #0073e6;
 }
@@ -152,26 +199,31 @@ nav ul li a:hover {
 .tech-category ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .tech-category ul li {
     font-size: 1rem;
     padding: 5px 0;
     color: #555;
-    /* Softer color for body text */
-}
-
-/* Section background */
-.section {
-    padding: 80px 0;
-    text-align: center;
-    background: linear-gradient(135deg, #f0f4f7 0%, #ffffff 100%);
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Contact Section */
+.contact {
+    background-color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1rem;
+    color: #555;
+}
+
 .contact a {
     color: #0073e6;
     text-decoration: none;
