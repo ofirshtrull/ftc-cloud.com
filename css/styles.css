@@ -72,8 +72,13 @@ nav ul li a:hover {
     font-size: 3rem;
 }
 
-.hero p {
-    font-size: 1.2rem;
+.tagline {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    border-radius: 5px;
 }
 
 .cta-button {
@@ -102,12 +107,23 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.tools-list {
+.tech-stack {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.tech-stack h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0073e6;
+}
+
+.tech-stack ul {
     list-style: none;
     padding: 0;
 }
 
-.tools-list li {
+.tech-stack ul li {
     font-size: 1rem;
     padding: 5px 0;
 }
