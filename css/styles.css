@@ -253,9 +253,17 @@ nav ul li img {
 }
 
 /* Contact Section Enhancements */
-.contact-section {
-    background-color: #f9f9f9;
-    padding-bottom: 60px;
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
 }
 
 .contact-details {
