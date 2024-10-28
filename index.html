@@ -2,15 +2,64 @@
 <html lang="en">
 
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTC-Cloud - DevOps Consulting Services in Alpharetta, GA</title>
+
+    <!-- SEO Meta Tags -->
     <meta name="description"
         content="FTC-Cloud offers top-notch DevOps consulting services in Alpharetta, GA. Specializing in cloud migration, Kubernetes, CI/CD pipelines, and more.">
     <meta name="keywords"
         content="DevOps Consulting, FTC-Cloud, Alpharetta GA, Cloud Migration, Kubernetes, CI/CD Pipelines, AWS, GCP, FinOps, SecOps">
-    <title>FTC-Cloud - DevOps Consulting Services</title>
+    <meta name="author" content="FTC-Cloud">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="FTC-Cloud - DevOps Consulting Services">
+    <meta property="og:description" content="Your trusted DevOps Consulting partner in Alpharetta, GA.">
+    <meta property="og:image" content="https://ftc-cloud.com/images/og-image.jpg">
+    <meta property="og:url" content="https://ftc-cloud.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FTC-Cloud - DevOps Consulting Services">
+    <meta name="twitter:description" content="Your trusted DevOps Consulting partner in Alpharetta, GA.">
+    <meta name="twitter:image" content="https://ftc-cloud.com/images/twitter-card.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data Markup (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "FTC-Cloud",
+      "url": "https://ftc-cloud.com/",
+      "logo": "https://ftc-cloud.com/images/logo.png",
+      "description": "FTC-Cloud offers top-notch DevOps consulting services in Alpharetta, GA.",
+      "telephone": "+1-470-403-8250",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your Street Address",
+        "addressLocality": "Alpharetta",
+        "addressRegion": "GA",
+        "postalCode": "Your Postal Code",
+        "addressCountry": "USA"
+      },
+      "areaServed": "USA",
+      "sameAs": [
+        "https://www.linkedin.com/in/ofir-shtrull/"
+      ]
+    }
+    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KSXLXDGBC5"></script>
@@ -27,7 +76,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <a href="#"><img src="images/logo.png" alt="FTC-Cloud Logo"></a>
+                <a href="#intro"><img src="images/logo.png" alt="FTC-Cloud Logo"></a>
             </div>
             <nav>
                 <ul>
@@ -35,14 +84,23 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#technologies">Tech Stack</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <!-- Social Media Icons -->
+                    <li><a href="https://www.linkedin.com/in/ofir-shtrull/" target="_blank"><img
+                                src="images/linkedin-icon.png" alt="LinkedIn"></a></li>
                 </ul>
             </nav>
+            <!-- Mobile Menu Icon -->
+            <div class="menu-icon" id="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="intro" class="hero">
+        <section id="intro" class="hero" role="banner">
             <div class="container">
                 <h1>Welcome to FTC-Cloud</h1>
                 <p class="tagline">Your trusted DevOps Consulting partner in Alpharetta, GA.</p>
@@ -51,14 +109,13 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="section services-section">
+        <section id="services" class="section services-section" role="region" aria-labelledby="services-heading">
             <div class="container">
-                <h2>Our Services</h2>
+                <h2 id="services-heading">Our Services</h2>
                 <p>FTC-Cloud provides a comprehensive range of DevOps consulting services designed to help businesses
                     enhance security, optimize costs, and embrace cloud-native solutions. Our services include:</p>
 
                 <div class="services-grid">
-
                     <!-- SecOps -->
                     <div class="service-category">
                         <h3>SecOps</h3>
@@ -112,13 +169,18 @@
                             assessments ensure scalability, security, and cost-efficiency.</p>
                     </div>
                 </div>
+
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <a href="#contact" class="cta-button">Get Started Today</a>
+                </div>
             </div>
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="section about-section">
+        <section id="about" class="section about-section" role="region" aria-labelledby="about-heading">
             <div class="container">
-                <h2>About FTC-Cloud</h2>
+                <h2 id="about-heading">About FTC-Cloud</h2>
                 <p>At FTC-Cloud, we are dedicated to providing best-in-class DevOps consulting services that empower
                     businesses to optimize and modernize their infrastructure. Our goal is to help companies streamline
                     their operations, enhance scalability, and embrace automation through modern DevOps practices and
@@ -137,9 +199,10 @@
         </section>
 
         <!-- Technologies Section -->
-        <section id="technologies" class="section tech-stack-section">
+        <section id="technologies" class="section tech-stack-section" role="region"
+            aria-labelledby="technologies-heading">
             <div class="container">
-                <h2>Our DevOps Technology Stack</h2>
+                <h2 id="technologies-heading">Our DevOps Technology Stack</h2>
                 <p>Our DevOps technology stack is unmatched and sets us apart from others in the industry. We leverage
                     the latest and most reliable tools to ensure the best results for our clients.</p>
 
@@ -218,24 +281,75 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section contact">
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section testimonials-section" role="region"
+            aria-labelledby="testimonials-heading">
             <div class="container">
-                <h2>Contact Us</h2>
-                <p>Connect with us on LinkedIn: <a href="https://www.linkedin.com/in/ofir-shtrull/" target="_blank">Ofir
-                        Shtrull on LinkedIn</a></p>
-                <p>Email: <a href="mailto:shtrull@gmail.com">shtrull@gmail.com</a></p>
-                <p>Phone: <a href="tel:+14704038250">470-403-8250</a></p>
+                <h2 id="testimonials-heading">What Our Clients Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p>"FTC-Cloud transformed our infrastructure, improving efficiency and reducing costs. Their
+                            expertise in Kubernetes was invaluable."</p>
+                        <p class="client-name">— Jane Doe, CTO of TechCorp</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Their team provided exceptional DevOps consulting services. Our migration to the cloud was
+                            seamless thanks to FTC-Cloud."</p>
+                        <p class="client-name">— John Smith, CEO of Innovate Inc.</p>
+                    </div>
+                    <!-- Add more testimonials as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section" role="region" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading">Get in Touch</h2>
+                <p>We're here to help you navigate your DevOps journey. Reach out to us through any of the methods
+                    below:</p>
+
+                <div class="contact-details">
+                    <p><strong>Email:</strong> <a href="mailto:shtrull@gmail.com">shtrull@gmail.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+14704038250">470-403-8250</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ofir-shtrull/"
+                            target="_blank">Ofir Shtrull</a></p>
+                </div>
+
+                <!-- Contact Form -->
+                <form action="mailto:shtrull@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <!-- CAPTCHA Placeholder -->
+                    <!-- Implement CAPTCHA here for spam protection -->
+
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2024 FTC-Cloud. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <!-- Add more footer links as needed -->
+                </ul>
+            </nav>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="scripts/script.js"></script>
 </body>
 
