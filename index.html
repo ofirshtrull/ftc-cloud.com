@@ -64,6 +64,7 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Inserted your actual Google Analytics Tracking ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KSXLXDGBC5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -319,20 +320,18 @@
                 </div>
 
                 <!-- Contact Form -->
-                <form action="mailto:shtrull@gmail.com" method="post" enctype="text/plain" class="contact-form">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <!-- CAPTCHA Placeholder -->
-                    <!-- Implement CAPTCHA here for spam protection -->
-
-                    <button type="submit" class="cta-button">Send Message</button>
+                <form action="https://formspree.io/f/xzzbdkew" method="POST" class="contact-form">
+                    <label>
+                        Your email:
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>
+                        Your message:
+                        <textarea name="message" rows="5" required></textarea>
+                    </label>
+                    <!-- Honeypot Field (Hidden) -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    <button type="submit" class="cta-button">Send</button>
                 </form>
             </div>
         </section>
