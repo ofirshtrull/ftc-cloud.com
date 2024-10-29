@@ -53,7 +53,7 @@ header {
 }
 
 .logo img {
-    width: 250px;
+    width: 80px;
     height: auto;
     display: inline-block;
     vertical-align: middle;
@@ -104,7 +104,7 @@ nav ul li img {
 
 /* Hero Section */
 .hero {
-    background: url('../images/cloud-background.jpg') no-repeat center center/cover;
+    background: url('../assests/logos/cloud-background.jpg') no-repeat center center/cover;
     padding: 150px 0;
     text-align: center;
     color: white;
