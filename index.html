@@ -17,7 +17,7 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="FTC-Cloud - DevOps Consulting Services">
     <meta property="og:description" content="Your trusted DevOps Consulting partner in Metro Atlanta, GA.">
-    <meta property="og:image" content="https://ftc-cloud.com/assests/logos/og-image.jpg">
+    <meta property="og:image" content="https://ftc-cloud.com/assests/logos/logo.png">
     <meta property="og:url" content="https://ftc-cloud.com/">
     <meta property="og:type" content="website">
 
@@ -25,7 +25,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FTC-Cloud - DevOps Consulting Services">
     <meta name="twitter:description" content="Your trusted DevOps Consulting partner in Metro Atlanta, GA.">
-    <meta name="twitter:image" content="https://ftc-cloud.com/assests/logos/twitter-card.jpg">
+    <meta name="twitter:image" content="https://ftc-cloud.com/assests/logos/logo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ftc-cloud.com/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assests/favicon/tech-color-hand-drawn-16.png">
@@ -36,6 +39,8 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <!-- Structured Data Markup (Schema.org) -->
@@ -50,10 +55,8 @@
       "telephone": "+1-470-403-8250",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Your Street Address",
         "addressLocality": "Alpharetta",
         "addressRegion": "GA",
-        "postalCode": "Your Postal Code",
         "addressCountry": "USA"
       },
       "areaServed": "USA",
@@ -79,22 +82,10 @@
     <link rel="preload" href="scripts/script.js" as="script">
     <link rel="preload" href="assests/logos/logo3.png" as="image">
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-        crossorigin="anonymous"></script>
 </head>
 
 <body>
     <a href="#main-content" class="sr-only">Skip to main content</a>
-
-    <!-- Example Ad Unit Placement -->
-    <div class="ad-container">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-            data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
 
     <header role="banner">
         <div class="container header-container">
@@ -114,6 +105,12 @@
                             id="linkedin-link" aria-label="Visit our LinkedIn profile">
                             <img src="assests/logos/linkedin-120.png" alt="LinkedIn" width="24" height="24">
                         </a>
+                    </li>
+                    <li>
+                        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                            <span class="icon-sun">☀️</span>
+                            <span class="icon-moon">🌙</span>
+                        </button>
                     </li>
                 </ul>
             </nav>
@@ -147,7 +144,7 @@
                 <div class="services-grid">
                     <!-- SecOps -->
                     <div class="service-category">
-                        <img src="assests/logos/cloud-firewall-48.png" alt="SecOps Icon" class="service-icon">
+                        <img src="assests/logos/secops-icon.png" alt="SecOps Icon" class="service-icon" loading="lazy">
                         <h3>SecOps</h3>
                         <p>Transform your security posture with our DevSecOps approach. We integrate robust security
                             practices into your development pipeline, ensuring your infrastructure and applications are
@@ -159,7 +156,7 @@
 
                     <!-- FinOps -->
                     <div class="service-category">
-                        <img src="assests/logos/business-management-48.png" alt="FinOps Icon" class="service-icon">
+                        <img src="assests/logos/finops-icon.png" alt="FinOps Icon" class="service-icon" loading="lazy">
                         <h3>FinOps</h3>
                         <p>Optimize your cloud spending with FinOps strategies. We provide insights into your cloud
                             costs, help you establish budgets, and implement cost optimization practices across
@@ -168,7 +165,7 @@
 
                     <!-- Migrate to Cloud -->
                     <div class="service-category">
-                        <img src="assests/logos/cloud-done-48.png" alt="Cloud Migration Icon" class="service-icon">
+                        <img src="assests/logos/cloud-migration-icon.png" alt="Cloud Migration Icon" class="service-icon" loading="lazy">
                         <h3>Migrate to Cloud</h3>
                         <p>We assist businesses in seamlessly migrating their applications and infrastructure to the
                             cloud, ensuring minimal downtime and maximum scalability.</p>
@@ -178,7 +175,7 @@
 
                     <!-- Migrate to Kubernetes -->
                     <div class="service-category">
-                        <img src="assests/logos/kubernetes-48.png" alt="Kubernetes Icon" class="service-icon">
+                        <img src="assests/logos/kubernetes-icon.png" alt="Kubernetes Icon" class="service-icon" loading="lazy">
                         <h3>Migrate to Kubernetes (K8s)</h3>
                         <p>Move your legacy systems and monolithic applications to Kubernetes for improved scalability,
                             orchestration, and efficiency.</p>
@@ -188,7 +185,7 @@
 
                     <!-- Build CI/CD Tools -->
                     <div class="service-category">
-                        <img src="assests/logos/worker-beard-48.png" alt="CI/CD Tools Icon" class="service-icon">
+                        <img src="assests/logos/cicd-icon-new.png" alt="CI/CD Tools Icon" class="service-icon" loading="lazy">
                         <h3>Build CI/CD Tools</h3>
                         <p>Accelerate your software delivery with our advanced CI/CD solutions. We design and implement
                             automated pipelines that transform your development workflow, enabling rapid, reliable, and
@@ -199,7 +196,7 @@
 
                     <!-- Architecture Overview -->
                     <div class="service-category">
-                        <img src="assests/logos/structural-48.png" alt="Architecture Icon" class="service-icon">
+                        <img src="assests/logos/architecture-icon.png" alt="Architecture Icon" class="service-icon" loading="lazy">
                         <h3>Architecture Overview</h3>
                         <p>Elevate your infrastructure with our comprehensive architecture assessment and design
                             services. We analyze your current architecture and provide actionable recommendations for
@@ -244,7 +241,7 @@
                 <div class="tech-stack-grid">
                     <!-- Cloud Platforms -->
                     <div class="tech-category">
-                        <img src="assests/logos/cloud-platform-icon.png" alt="Cloud Platforms Icon" class="tech-icon">
+                        <img src="assests/logos/cloud-platforms-icon.png" alt="Cloud Platforms Icon" class="tech-icon" loading="lazy">
                         <h3>Cloud Platforms</h3>
                         <ul>
                             <li>Google Cloud Platform (GCP)</li>
@@ -254,8 +251,8 @@
 
                     <!-- Container Orchestration -->
                     <div class="tech-category">
-                        <img src="assests/logos/container-icon.png" alt="Container Orchestration Icon"
-                            class="tech-icon">
+                        <img src="assests/logos/containers-icon.png" alt="Container Orchestration Icon"
+                            class="tech-icon" loading="lazy">
                         <h3>Container Orchestration</h3>
                         <ul>
                             <li>Kubernetes (K8s)</li>
@@ -265,7 +262,7 @@
 
                     <!-- CI/CD Tools -->
                     <div class="tech-category">
-                        <img src="assests/logos/cicd-icon.png" alt="CI/CD Tools Icon" class="tech-icon">
+                        <img src="assests/logos/cicd-icon-new.png" alt="CI/CD Tools Icon" class="tech-icon" loading="lazy">
                         <h3>CI/CD Tools</h3>
                         <ul>
                             <li>Jenkins</li>
@@ -276,7 +273,7 @@
 
                     <!-- Infrastructure as Code (IaC) -->
                     <div class="tech-category">
-                        <img src="assests/logos/iac-icon.png" alt="IaC Icon" class="tech-icon">
+                        <img src="assests/logos/iac-icon-new.png" alt="IaC Icon" class="tech-icon" loading="lazy">
                         <h3>Infrastructure as Code (IaC)</h3>
                         <ul>
                             <li>Terraform</li>
@@ -287,18 +284,19 @@
 
                     <!-- Monitoring & Observability -->
                     <div class="tech-category">
-                        <img src="assests/logos/monitoring-icon.png" alt="Monitoring Icon" class="tech-icon">
+                        <img src="assests/logos/monitoring-icon-new.png" alt="Monitoring Icon" class="tech-icon" loading="lazy">
                         <h3>Monitoring & Observability</h3>
                         <ul>
                             <li>Prometheus</li>
                             <li>Grafana</li>
                             <li>Loki</li>
+                            <li>Tracing</li>
                         </ul>
                     </div>
 
                     <!-- Service Mesh & Networking -->
                     <div class="tech-category">
-                        <img src="assests/logos/network-icon.png" alt="Service Mesh Icon" class="tech-icon">
+                        <img src="assests/logos/network-icon-new.png" alt="Service Mesh Icon" class="tech-icon" loading="lazy">
                         <h3>Service Mesh & Networking</h3>
                         <ul>
                             <li>Linkerd</li>
@@ -307,7 +305,7 @@
 
                     <!-- Message Queues & Streaming -->
                     <div class="tech-category">
-                        <img src="assests/logos/mq-icon.png" alt="Message Queues Icon" class="tech-icon">
+                        <img src="assests/logos/mq-icon-new.png" alt="Message Queues Icon" class="tech-icon" loading="lazy">
                         <h3>Message Queues & Streaming</h3>
                         <ul>
                             <li>Apache Kafka</li>
@@ -375,7 +373,7 @@
             </div>
         </div>
         <div class="container">
-            <p class="copyright">&copy; 2024-2025 FTC-Cloud. All rights reserved.</p>
+            <p class="copyright">&copy; 2024-2026 FTC-Cloud. All rights reserved.</p>
         </div>
     </footer>
 

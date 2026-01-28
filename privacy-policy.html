@@ -2,41 +2,76 @@
 <html lang="en">
 
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
-    <title>Privacy Policy - FTC-Cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - FTC-Cloud DevOps Consulting</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Privacy Policy for FTC-Cloud DevOps consulting services. Learn how we collect, use, and protect your personal information.">
+    <meta name="author" content="FTC-Cloud">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ftc-cloud.com/privacy-policy.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assests/favicon/tech-color-hand-drawn-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assests/favicon/tech-color-hand-drawn-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assests/favicon/tech-color-hand-drawn-96.png">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <header role="banner">
         <div class="container header-container">
             <div class="logo">
-                <a href="#intro"><img src="assests/logos/logo3.png" alt="FTC-Cloud Logo"></a>
+                <a href="index.html" aria-label="FTC-Cloud Home">
+                    <img src="assests/logos/logo3.png" alt="FTC-Cloud Logo" width="80" height="80">
+                </a>
             </div>
-            <nav>
+            <nav role="navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#technologies">Tech Stack</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <!-- Social Media Icons -->
-                    <li><a href="https://www.linkedin.com/in/ofir-shtrull/" target="_blank"><img
-                                src="images/linkedin-icon.png" alt="LinkedIn"></a></li>
+                    <li><a href="index.html#about" aria-label="About Us">About</a></li>
+                    <li><a href="index.html#services" aria-label="Our Services">Services</a></li>
+                    <li><a href="index.html#technologies" aria-label="Our Tech Stack">Tech Stack</a></li>
+                    <li><a href="index.html#contact" aria-label="Contact Us">Contact</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ofir-shtrull/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Visit our LinkedIn profile">
+                            <img src="assests/logos/linkedin-120.png" alt="LinkedIn" width="24" height="24">
+                        </a>
+                    </li>
+                    <li>
+                        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                            <span class="icon-sun">☀️</span>
+                            <span class="icon-moon">🌙</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
-            <!-- Mobile Menu Icon -->
-            <div class="menu-icon" id="menu-icon">
+            <button class="menu-icon" id="menu-icon" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
-    <main>
-        <section class="privacy-policy">
+
+    <main id="main-content" role="main">
+        <section class="section legal-section privacy-policy" role="region" aria-labelledby="privacy-heading">
             <div class="container">
-                <h1>Privacy Policy</h1>
-                <p>Effective Date: October 28, 2024</p>
+                <h1 id="privacy-heading">Privacy Policy</h1>
+                <p class="effective-date">Effective Date: October 28, 2024</p>
 
                 <h2>1. Introduction</h2>
                 <p>Welcome to FTC-Cloud. We are committed to protecting your personal information and your right to
@@ -95,25 +130,53 @@
 
                 <h2>11. Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, please contact us:</p>
-                <ul>
+                <ul class="contact-list">
                     <li>Email: <a href="mailto:shtrull@gmail.com">shtrull@gmail.com</a></li>
                     <li>Phone: <a href="tel:+14704038250">470-403-8250</a></li>
                 </ul>
+
+                <div class="back-to-home">
+                    <a href="index.html" class="cta-button">← Back to Home</a>
+                </div>
             </div>
         </section>
     </main>
+
     <footer role="contentinfo">
-        <div class="container">
-            <p>&copy; 2024 FTC-Cloud. All Rights Reserved.</p>
-            <nav class="footer-nav">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#technologies">Tech Stack</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="index.html#services">SecOps</a></li>
+                    <li><a href="index.html#services">FinOps</a></li>
+                    <li><a href="index.html#services">Cloud Migration</a></li>
+                    <li><a href="index.html#services">Kubernetes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
                 <ul>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    <!-- Add more footer links as needed -->
                 </ul>
-            </nav>
+            </div>
+        </div>
+        <div class="container">
+            <p class="copyright">&copy; 2024-2026 FTC-Cloud. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/script.js" defer></script>
 </body>
 
 </html>
