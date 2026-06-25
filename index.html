@@ -5,43 +5,60 @@
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FTC-Cloud - DevOps Consulting Services in Alpharetta, GA</title>
+    <title>Ofir Shtrull — DevOps &amp; Platform Engineering Consultant | FTC-Cloud</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="FTC-Cloud offers top-notch DevOps consulting services in Metro Atlanta, GA. Specializing in cloud migration, Kubernetes, CI/CD pipelines, and more.">
+        content="Senior DevOps & platform engineering consulting by Ofir Shtrull (FTC-Cloud). Cloud migrations, Kubernetes, CI/CD, FinOps and SecOps on AWS & GCP — for teams in Metro Atlanta and beyond.">
     <meta name="keywords"
-        content="DevOps Consulting, FTC-Cloud, Alpharetta GA, Atlanta, Cloud Migration, Kubernetes, CI/CD Pipelines, AWS, GCP, FinOps, SecOps, Jenkins, Github Actions, Github, Unix, Docker,">
-    <meta name="author" content="FTC-Cloud">
+        content="DevOps Consultant, Platform Engineering, FTC-Cloud, Ofir Shtrull, Alpharetta GA, Atlanta, Cloud Migration, Kubernetes, CI/CD Pipelines, AWS, GCP, FinOps, SecOps, Terraform, ArgoCD, Docker">
+    <meta name="author" content="Ofir Shtrull">
+    <meta name="theme-color" content="#16181f">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="FTC-Cloud - DevOps Consulting Services">
-    <meta property="og:description" content="Your trusted DevOps Consulting partner in Metro Atlanta, GA.">
+    <meta property="og:title" content="Ofir Shtrull — DevOps & Platform Engineering Consultant">
+    <meta property="og:description" content="Ship faster, sleep better. Senior DevOps consulting for secure, cost-efficient cloud platforms on AWS, GCP & Kubernetes.">
     <meta property="og:image" content="https://ftc-cloud.com/assests/logos/logo.png">
     <meta property="og:url" content="https://ftc-cloud.com/">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FTC-Cloud - DevOps Consulting Services">
-    <meta name="twitter:description" content="Your trusted DevOps Consulting partner in Metro Atlanta, GA.">
+    <meta name="twitter:title" content="Ofir Shtrull — DevOps & Platform Engineering Consultant">
+    <meta name="twitter:description" content="Ship faster, sleep better. Senior DevOps consulting for secure, cost-efficient cloud platforms.">
     <meta name="twitter:image" content="https://ftc-cloud.com/assests/logos/logo.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ftc-cloud.com/">
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assests/favicon/mark.svg">
     <link rel="icon" type="image/png" sizes="16x16" href="assests/favicon/tech-color-hand-drawn-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assests/favicon/tech-color-hand-drawn-32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assests/favicon/tech-color-hand-drawn-96.png">
 
+    <!-- Set theme before paint to avoid flash -->
+    <script>
+        (function () {
+            try {
+                document.documentElement.classList.add('js');
+                var t = localStorage.getItem('theme') || 'dark';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=7">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Structured Data Markup (Schema.org) -->
     <script type="application/ld+json">
@@ -51,8 +68,17 @@
       "name": "FTC-Cloud",
       "url": "https://ftc-cloud.com/",
       "logo": "https://ftc-cloud.com/assests/logos/logo.png",
-      "description": "FTC-Cloud offers top-notch DevOps consulting services in Metro Atlanta, GA.",
+      "image": "https://ftc-cloud.com/assests/logos/logo.png",
+      "description": "Senior DevOps & platform engineering consulting by Ofir Shtrull. Cloud migration, Kubernetes, CI/CD, FinOps and SecOps on AWS & GCP.",
       "telephone": "+1-470-403-8250",
+      "priceRange": "$$$",
+      "founder": {
+        "@type": "Person",
+        "name": "Ofir Shtrull",
+        "jobTitle": "DevOps & Platform Engineering Consultant",
+        "sameAs": "https://www.linkedin.com/in/ofir-shtrull/"
+      },
+      "knowsAbout": ["DevOps", "Platform Engineering", "Kubernetes", "AWS", "Google Cloud", "CI/CD", "Terraform", "FinOps", "DevSecOps", "Observability"],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Alpharetta",
@@ -67,54 +93,63 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- Inserted your actual Google Analytics Tracking ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3DQY5XR8G"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-L3DQY5XR8G');
     </script>
 
     <!-- Preload Critical Assets -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="scripts/script.js" as="script">
-    <link rel="preload" href="assests/logos/logo3.png" as="image">
-
+    <link rel="preload" href="css/styles.css?v=7" as="style">
 </head>
 
 <body>
-    <a href="#main-content" class="sr-only">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header role="banner">
         <div class="container header-container">
             <div class="logo">
-                <a href="#intro" aria-label="FTC-Cloud Home">
-                    <img src="assests/logos/logo3.png" alt="FTC-Cloud Logo" width="80" height="80">
+                <a href="#intro" aria-label="FTC-Cloud — home">
+                    <svg class="logo-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                        <rect x="1" y="1" width="38" height="38" rx="11" fill="var(--accent-soft)" stroke="var(--accent-line)"/>
+                        <path d="M13.5 22.5a3.4 3.4 0 0 1-.3-6.8 4.8 4.8 0 0 1 9.2-1.3 3.3 3.3 0 0 1 .2 6.6" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.5 26.6h11M20 22.2v4.4" stroke="var(--accent-line)" stroke-width="1.3" stroke-linecap="round"/>
+                        <g fill="var(--accent)"><circle cx="15" cy="26.6" r="1.5"/><circle cx="20" cy="26.6" r="1.5"/><circle cx="25" cy="26.6" r="1.5"/></g>
+                    </svg>
+                    <span class="logo-wordmark">FTC<span class="logo-dot">·</span>Cloud</span>
                 </a>
             </div>
             <nav role="navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="#about" aria-label="About Us">About</a></li>
-                    <li><a href="#services" aria-label="Our Services">Services</a></li>
-                    <li><a href="#technologies" aria-label="Our Tech Stack">Tech Stack</a></li>
-                    <li><a href="#contact" aria-label="Contact Us">Contact</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">How I work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#technologies">Stack</a></li>
+                    <li class="nav-divider" aria-hidden="true"></li>
                     <li>
                         <a href="https://www.linkedin.com/in/ofir-shtrull/" target="_blank" rel="noopener noreferrer"
-                            id="linkedin-link" aria-label="Visit our LinkedIn profile">
-                            <img src="assests/logos/linkedin-120.png" alt="LinkedIn" width="24" height="24">
+                            id="linkedin-link" class="nav-icon" aria-label="Ofir Shtrull on LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+                            </svg>
                         </a>
                     </li>
                     <li>
-                        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                            <span class="icon-sun">☀️</span>
-                            <span class="icon-moon">🌙</span>
+                        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                            </svg>
+                            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                            </svg>
                         </button>
                     </li>
+                    <li><a href="#contact" class="nav-cta">Book a call</a></li>
                 </ul>
             </nav>
-            <button class="menu-icon" id="menu-icon" aria-label="Toggle menu" aria-expanded="false">
+            <button class="menu-icon" id="menu-icon" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -124,190 +159,282 @@
 
     <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section id="intro" class="hero" role="banner" aria-labelledby="hero-heading">
-            <div class="container">
-                <h1 id="hero-heading">Transform Your DevOps Journey</h1>
-                <p class="tagline">Expert DevOps consulting that drives innovation, efficiency, and growth in
-                    Metro Atlanta, GA and beyond.</p>
-                <a href="#services" class="cta-button" role="button">Discover How We Can Help</a>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="section services-section" role="region" aria-labelledby="services-heading">
-            <div class="container">
-                <h2 id="services-heading">Our Expertise</h2>
-                <p>At FTC-Cloud, we deliver cutting-edge DevOps solutions that transform how businesses operate in the
-                    cloud. Our comprehensive services are designed to enhance security, optimize costs, and accelerate
-                    your digital transformation:</p>
-
-                <div class="services-grid">
-                    <!-- SecOps -->
-                    <div class="service-category">
-                        <img src="assests/logos/secops-icon.png" alt="SecOps Icon" class="service-icon" loading="lazy">
-                        <h3>SecOps</h3>
-                        <p>Transform your security posture with our DevSecOps approach. We integrate robust security
-                            practices into your development pipeline, ensuring your infrastructure and applications are
-                            protected from day one.</p>
-                        <p>Our comprehensive security framework covers vulnerability management, compliance automation,
-                            and security testing integration, creating a foundation of trust in your digital operations.
-                        </p>
+        <section id="intro" class="hero" aria-labelledby="hero-heading">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="kicker reveal" data-reveal>
+                        <span class="kicker-dot" aria-hidden="true"></span>
+                        DevOps &amp; Platform Engineering Consulting
+                    </p>
+                    <h1 id="hero-heading" class="reveal" data-reveal data-reveal-delay="1">
+                        Ship faster.<br>Sleep better.
+                    </h1>
+                    <p class="hero-sub reveal" data-reveal data-reveal-delay="2">
+                        I'm <strong>Ofir Shtrull</strong>. I help engineering teams run secure, cost-efficient
+                        cloud platforms on AWS, GCP and Kubernetes — from the first migration to a calm,
+                        observable production you can actually trust.
+                    </p>
+                    <div class="hero-actions reveal" data-reveal data-reveal-delay="3">
+                        <a href="#contact" class="btn btn-primary">Book a free intro call</a>
+                        <a href="#services" class="btn btn-ghost">See what I do
+                            <span class="btn-arrow" aria-hidden="true">→</span>
+                        </a>
                     </div>
+                    <ul class="hero-trust reveal" data-reveal data-reveal-delay="4">
+                        <li><span class="hero-trust-num">10+</span> years in production</li>
+                        <li><span class="hero-trust-num">7</span> industries shipped</li>
+                        <li><span class="hero-trust-mono">AWS · GCP · K8s</span></li>
+                    </ul>
+                </div>
 
-                    <!-- FinOps -->
-                    <div class="service-category">
-                        <img src="assests/logos/finops-icon.png" alt="FinOps Icon" class="service-icon" loading="lazy">
-                        <h3>FinOps</h3>
-                        <p>Optimize your cloud spending with FinOps strategies. We provide insights into your cloud
-                            costs, help you establish budgets, and implement cost optimization practices across
-                            multi-cloud environments.</p>
-                    </div>
-
-                    <!-- Migrate to Cloud -->
-                    <div class="service-category">
-                        <img src="assests/logos/cloud-migration-icon.png" alt="Cloud Migration Icon" class="service-icon" loading="lazy">
-                        <h3>Migrate to Cloud</h3>
-                        <p>We assist businesses in seamlessly migrating their applications and infrastructure to the
-                            cloud, ensuring minimal downtime and maximum scalability.</p>
-                        <p>Our cloud migration services help you leverage the full power of platforms like AWS and GCP
-                            while keeping costs and risks under control.</p>
-                    </div>
-
-                    <!-- Migrate to Kubernetes -->
-                    <div class="service-category">
-                        <img src="assests/logos/kubernetes-icon.png" alt="Kubernetes Icon" class="service-icon" loading="lazy">
-                        <h3>Migrate to Kubernetes (K8s)</h3>
-                        <p>Move your legacy systems and monolithic applications to Kubernetes for improved scalability,
-                            orchestration, and efficiency.</p>
-                        <p>We guide your migration to containerized environments, ensuring your systems are
-                            cloud-native, resilient, and future-proof.</p>
-                    </div>
-
-                    <!-- Build CI/CD Tools -->
-                    <div class="service-category">
-                        <img src="assests/logos/cicd-icon-new.png" alt="CI/CD Tools Icon" class="service-icon" loading="lazy">
-                        <h3>Build CI/CD Tools</h3>
-                        <p>Accelerate your software delivery with our advanced CI/CD solutions. We design and implement
-                            automated pipelines that transform your development workflow, enabling rapid, reliable, and
-                            secure deployments.</p>
-                        <p>From Jenkins to GitHub Actions and ArgoCD, we leverage industry-leading tools to create
-                            pipelines that match your unique requirements.</p>
-                    </div>
-
-                    <!-- Architecture Overview -->
-                    <div class="service-category">
-                        <img src="assests/logos/architecture-icon.png" alt="Architecture Icon" class="service-icon" loading="lazy">
-                        <h3>Architecture Overview</h3>
-                        <p>Elevate your infrastructure with our comprehensive architecture assessment and design
-                            services. We analyze your current architecture and provide actionable recommendations for
-                            improvement.</p>
-                        <p>Our solutions focus on creating resilient, scalable, and efficient systems that drive
-                            business growth while optimizing operational costs.</p>
+                <div class="hero-panel reveal" data-reveal data-reveal-delay="3" aria-hidden="true">
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-title">ofir@ftc-cloud — platform</span>
+                        </div>
+                        <pre class="terminal-body"><span class="t-prompt">~/ftc-cloud ›</span> <span class="t-cmd">platform status</span>
+<span class="t-ok">✔</span> infra/terraform     <span class="t-dim">applied</span>   42 resources
+<span class="t-ok">✔</span> k8s/argocd          <span class="t-dim">synced</span>    healthy
+<span class="t-ok">✔</span> ci/github-actions   <span class="t-dim">green</span>     1m42s
+<span class="t-ok">✔</span> slo/availability    <span class="t-accent">99.98%</span>    on budget
+<span class="t-ok">✔</span> cost/finops         <span class="t-accent">-37%</span>      vs. last qtr
+<span class="t-prompt">~/ftc-cloud ›</span> <span class="t-cmd">ship --safely</span><span class="t-caret"></span></pre>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="section about-section" role="region" aria-labelledby="about-heading">
+        <!-- Services Section -->
+        <section id="services" class="section services-section" aria-labelledby="services-heading">
             <div class="container">
-                <h2 id="about-heading">Why Choose FTC-Cloud</h2>
-                <p>We are passionate DevOps innovators dedicated to transforming how businesses operate in the cloud.
-                    Our mission is to empower organizations with cutting-edge DevOps practices that drive efficiency,
-                    security, and scalability. We don't just implement solutions; we partner with you to create lasting
-                    technological advantages.</p>
+                <header class="section-head">
+                    <p class="section-label"><span aria-hidden="true">~/</span>services</p>
+                    <h2 id="services-heading">What I help teams ship</h2>
+                    <p class="section-lead">Senior, hands-on work across the platform lifecycle — picked up where
+                        your team needs depth, handed back so they can own it.</p>
+                </header>
 
-                <p>With over a decade of experience across diverse industries—including cybersecurity, financial
-                    technology, IoT, fraud prevention, web services, healthcare, and smart home technology—we bring
-                    unparalleled expertise to every project. This rich background allows us to understand the unique
-                    challenges of different sectors and deliver solutions that precisely match your needs.</p>
+                <div class="bento">
+                    <article class="bento-card featured">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.5 20 5.4v5.3c0 5-3.4 8.6-8 10.3-4.6-1.7-8-5.3-8-10.3V5.4z"/>
+                                <path d="M8.7 11.9l2.4 2.4 4.4-4.9"/>
+                            </svg>
+                        </span>
+                        <h3>SecOps &amp; DevSecOps</h3>
+                        <p>Security baked into the pipeline, not bolted on after. I shift scanning, secrets
+                            management, policy-as-code and compliance left — so vulnerabilities get caught at
+                            commit time, not in an audit. Experienced building and operating to
+                            <strong>PCI-DSS</strong>, <strong>HIPAA</strong> and <strong>SOC 2</strong> requirements.</p>
+                        <ul class="card-tags">
+                            <li>PCI · HIPAA · SOC 2</li>
+                            <li>Policy as code</li>
+                            <li>Supply-chain security</li>
+                            <li>Compliance automation</li>
+                        </ul>
+                    </article>
 
-                <p>Our approach combines technical excellence with practical business insight. Whether you're embarking
-                    on a cloud migration, implementing automated pipelines, or optimizing your Kubernetes
-                    infrastructure, we ensure your technology investments deliver measurable business value. We pride
-                    ourselves on building long-term partnerships, helping our clients stay ahead in an ever-evolving
-                    technical landscape.</p>
+                    <article class="bento-card">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="8.5"/>
+                                <path d="M12 6.8v10.4"/>
+                                <path d="M14.7 9.1c0-1.1-1.2-1.8-2.7-1.8s-2.7.7-2.7 2c0 2.7 5.4 1.4 5.4 4.1 0 1.2-1.2 1.9-2.7 1.9s-2.7-.7-2.7-1.9"/>
+                            </svg>
+                        </span>
+                        <h3>FinOps</h3>
+                        <p>Cloud bills that finally make sense. I find the waste, set budgets and guardrails, and
+                            cut spend without slowing anyone down.</p>
+                    </article>
+
+                    <article class="bento-card">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7.5 16a3.6 3.6 0 0 1-.2-7.2 5.1 5.1 0 0 1 9.8-1.3A3.6 3.6 0 0 1 16.5 16"/>
+                                <path d="M12 20.5V9.6"/>
+                                <path d="M9.2 12.4 12 9.5l2.8 2.9"/>
+                            </svg>
+                        </span>
+                        <h3>Cloud Migration</h3>
+                        <p>Move to AWS or GCP with minimal downtime and a clear rollback plan — leveraging the
+                            platform instead of just lifting and shifting.</p>
+                    </article>
+
+                    <article class="bento-card">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.6 20.5 7v10L12 21.4 3.5 17V7z"/>
+                                <path d="M3.7 7.2 12 12l8.3-4.8M12 12v9.2"/>
+                            </svg>
+                        </span>
+                        <h3>Kubernetes</h3>
+                        <p>Take monoliths and legacy workloads to Kubernetes done right — resilient, observable
+                            and genuinely cloud-native, not just containerized.</p>
+                    </article>
+
+                    <article class="bento-card">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4.5 12a7.5 7.5 0 0 1 12.9-5.2"/>
+                                <path d="M17.5 3.3V6.8H14"/>
+                                <path d="M19.5 12a7.5 7.5 0 0 1-12.9 5.2"/>
+                                <path d="M6.5 20.7v-3.5H10"/>
+                            </svg>
+                        </span>
+                        <h3>CI/CD Pipelines</h3>
+                        <p>Fast, reliable, secure delivery with Jenkins, GitHub Actions and ArgoCD — pipelines
+                            shaped to your workflow, not a template.</p>
+                    </article>
+
+                    <article class="bento-card">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3 21 7.6 12 12.2 3 7.6z"/>
+                                <path d="M3 12.2 12 16.8l9-4.6"/>
+                                <path d="M3 16.7 12 21.3l9-4.6"/>
+                            </svg>
+                        </span>
+                        <h3>Architecture &amp; IaC</h3>
+                        <p>Honest assessment of where you are, a pragmatic plan for where you're going, and the
+                            Terraform to get you there.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section process-section" aria-labelledby="process-heading">
+            <div class="container">
+                <header class="section-head">
+                    <p class="section-label"><span aria-hidden="true">~/</span>process</p>
+                    <h2 id="process-heading">How I work</h2>
+                    <p class="section-lead">No 60-slide decks. A tight loop that gets you running and then gets
+                        out of the way.</p>
+                </header>
+
+                <ol class="process-steps">
+                    <li class="process-step">
+                        <span class="step-index" aria-hidden="true">01</span>
+                        <h3>Assess</h3>
+                        <p>I audit your infrastructure, pipelines, cost and security posture, then show you the
+                            real risks and the highest-leverage fixes — in plain language.</p>
+                    </li>
+                    <li class="process-step">
+                        <span class="step-index" aria-hidden="true">02</span>
+                        <h3>Implement</h3>
+                        <p>Migrations, pipelines, infrastructure-as-code and observability — built incrementally,
+                            shipped safely, with your team in the loop the whole way.</p>
+                    </li>
+                    <li class="process-step">
+                        <span class="step-index" aria-hidden="true">03</span>
+                        <h3>Enable</h3>
+                        <p>Runbooks, docs and pairing so your engineers own what we built. I'm a force multiplier,
+                            not a dependency.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section" aria-labelledby="about-heading">
+            <div class="container about-grid">
+                <div class="about-copy">
+                    <p class="section-label"><span aria-hidden="true">~/</span>about</p>
+                    <h2 id="about-heading">A decade of keeping production calm</h2>
+                    <p>I've spent more than ten years building and running cloud platforms across cybersecurity,
+                        fintech, IoT, fraud prevention, healthcare, web services and smart-home technology. That
+                        range means I've seen how the same DevOps problem shows up differently in a regulated bank
+                        and a fast-moving startup — and how to solve it for each.</p>
+                    <p>I've worked hands-on in <strong>PCI-DSS</strong> and <strong>HIPAA</strong> environments and
+                        carried teams through <strong>SOC 2 Type II</strong> audits — so compliance is something I
+                        design into the platform from the start, not bolt on the week before the assessor shows up.</p>
+                    <p>I speak in trade-offs, not buzzwords. Whether you're migrating to the cloud, taming a
+                        Kubernetes estate, or trying to make your cloud bill predictable, my job is to make your
+                        technology investments deliver measurable business value — and to leave your team stronger
+                        than I found it.</p>
+                    <a href="#contact" class="btn btn-ghost">Let's talk <span class="btn-arrow" aria-hidden="true">→</span></a>
+                </div>
+                <aside class="about-stats" aria-label="At a glance">
+                    <div class="stat">
+                        <span class="stat-num">10<span class="stat-unit">+ yrs</span></span>
+                        <span class="stat-label">In production DevOps</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">7</span>
+                        <span class="stat-label">Industries served</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">2</span>
+                        <span class="stat-label">Major clouds: AWS &amp; GCP</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">99.9<span class="stat-unit">%+</span></span>
+                        <span class="stat-label">Availability targets, met</span>
+                    </div>
+                </aside>
             </div>
         </section>
 
         <!-- Technologies Section -->
-        <section id="technologies" class="section tech-stack-section" role="region"
-            aria-labelledby="technologies-heading">
+        <section id="technologies" class="section tech-stack-section" aria-labelledby="technologies-heading">
             <div class="container">
-                <h2 id="technologies-heading">Our DevOps Technology Stack</h2>
-                <p>Our DevOps technology stack is unmatched and sets us apart from others in the industry. We leverage
-                    the latest and most reliable tools to ensure the best results for our clients.</p>
+                <header class="section-head">
+                    <p class="section-label"><span aria-hidden="true">~/</span>stack</p>
+                    <h2 id="technologies-heading">The toolbox</h2>
+                    <p class="section-lead">Proven, boring-in-the-best-way tooling — chosen to fit the team, not to
+                        chase trends.</p>
+                </header>
 
-                <div class="tech-stack-grid">
-                    <!-- Cloud Platforms -->
-                    <div class="tech-category">
-                        <img src="assests/logos/cloud-platforms-icon.png" alt="Cloud Platforms Icon" class="tech-icon" loading="lazy">
+                <div class="tech-grid">
+                    <div class="tech-group">
                         <h3>Cloud Platforms</h3>
-                        <ul>
-                            <li>Google Cloud Platform (GCP)</li>
-                            <li>Amazon Web Services (AWS)</li>
+                        <ul class="chips">
+                            <li>Google Cloud</li>
+                            <li>AWS</li>
                         </ul>
                     </div>
-
-                    <!-- Container Orchestration -->
-                    <div class="tech-category">
-                        <img src="assests/logos/containers-icon.png" alt="Container Orchestration Icon"
-                            class="tech-icon" loading="lazy">
-                        <h3>Container Orchestration</h3>
-                        <ul>
-                            <li>Kubernetes (K8s)</li>
+                    <div class="tech-group">
+                        <h3>Containers &amp; Orchestration</h3>
+                        <ul class="chips">
+                            <li>Kubernetes</li>
                             <li>Docker</li>
                         </ul>
                     </div>
-
-                    <!-- CI/CD Tools -->
-                    <div class="tech-category">
-                        <img src="assests/logos/cicd-icon-new.png" alt="CI/CD Tools Icon" class="tech-icon" loading="lazy">
-                        <h3>CI/CD Tools</h3>
-                        <ul>
+                    <div class="tech-group">
+                        <h3>CI/CD</h3>
+                        <ul class="chips">
                             <li>Jenkins</li>
                             <li>GitHub Actions</li>
                             <li>ArgoCD</li>
                         </ul>
                     </div>
-
-                    <!-- Infrastructure as Code (IaC) -->
-                    <div class="tech-category">
-                        <img src="assests/logos/iac-icon-new.png" alt="IaC Icon" class="tech-icon" loading="lazy">
-                        <h3>Infrastructure as Code (IaC)</h3>
-                        <ul>
+                    <div class="tech-group">
+                        <h3>Infrastructure as Code</h3>
+                        <ul class="chips">
                             <li>Terraform</li>
-                            <li>Crossplane</li>
                             <li>Terragrunt</li>
+                            <li>Crossplane</li>
                         </ul>
                     </div>
-
-                    <!-- Monitoring & Observability -->
-                    <div class="tech-category">
-                        <img src="assests/logos/monitoring-icon-new.png" alt="Monitoring Icon" class="tech-icon" loading="lazy">
-                        <h3>Monitoring & Observability</h3>
-                        <ul>
+                    <div class="tech-group">
+                        <h3>Observability</h3>
+                        <ul class="chips">
                             <li>Prometheus</li>
                             <li>Grafana</li>
                             <li>Loki</li>
                             <li>Tracing</li>
                         </ul>
                     </div>
-
-                    <!-- Service Mesh & Networking -->
-                    <div class="tech-category">
-                        <img src="assests/logos/network-icon-new.png" alt="Service Mesh Icon" class="tech-icon" loading="lazy">
-                        <h3>Service Mesh & Networking</h3>
-                        <ul>
+                    <div class="tech-group">
+                        <h3>Mesh &amp; Streaming</h3>
+                        <ul class="chips">
+                            <li>Istio</li>
                             <li>Linkerd</li>
-                        </ul>
-                    </div>
-
-                    <!-- Message Queues & Streaming -->
-                    <div class="tech-category">
-                        <img src="assests/logos/mq-icon-new.png" alt="Message Queues Icon" class="tech-icon" loading="lazy">
-                        <h3>Message Queues & Streaming</h3>
-                        <ul>
                             <li>Apache Kafka</li>
                         </ul>
                     </div>
@@ -316,54 +443,65 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section contact-section" role="region" aria-labelledby="contact-heading">
-            <div class="container">
-                <h2 id="contact-heading">Embark on Your DevOps Adventure: Together, We Can Achieve Greatness</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <p>Ready to revolutionize your DevOps practices? Connect with us to discuss how we can help
-                            transform your technical operations and accelerate your business growth.</p>
-                    </div>
-                    <form id="contact-form" class="contact-form" novalidate>
-                        <div class="form-group">
-                            <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
-                            <input type="text" id="name" name="name" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
-                            <input type="email" id="email" name="email" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
-                            <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
-                        </div>
-                        <button type="submit">Send Message</button>
-                    </form>
+        <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+            <div class="container contact-grid">
+                <div class="contact-intro">
+                    <p class="section-label"><span aria-hidden="true">~/</span>contact</p>
+                    <h2 id="contact-heading">Let's make production boring</h2>
+                    <p>Tell me what's keeping you up at night — a stalled migration, a runaway cloud bill, a
+                        pipeline nobody trusts. I'll reply personally, usually within a day.</p>
+                    <ul class="contact-channels">
+                        <li>
+                            <a href="tel:+14704038250">
+                                <span class="channel-label">Call</span>
+                                <span class="channel-value">+1 (470) 403-8250</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ofir-shtrull/" target="_blank" rel="noopener noreferrer">
+                                <span class="channel-label">Connect</span>
+                                <span class="channel-value">linkedin.com/in/ofir-shtrull</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
+                        <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" placeholder="jane@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">What can I help with? <span class="required" aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="We're migrating to GCP and our pipeline is fragile…"></textarea>
+                    </div>
+                    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                    <button type="submit">Send message</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer role="contentinfo">
         <div class="container footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
+            <div class="footer-brand">
+                <span class="logo-wordmark">FTC<span class="logo-dot">·</span>Cloud</span>
+                <p>DevOps &amp; platform engineering consulting by Ofir Shtrull. Metro Atlanta, GA — working with
+                    teams across the US.</p>
+            </div>
+            <nav class="footer-section" aria-label="Footer navigation">
+                <h3>Explore</h3>
                 <ul>
-                    <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#technologies">Tech Stack</a></li>
+                    <li><a href="#process">How I work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#technologies">Stack</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#services">SecOps</a></li>
-                    <li><a href="#services">FinOps</a></li>
-                    <li><a href="#services">Cloud Migration</a></li>
-                    <li><a href="#services">Kubernetes</a></li>
-                </ul>
-            </div>
+            </nav>
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
@@ -372,13 +510,18 @@
                 </ul>
             </div>
         </div>
-        <div class="container">
-            <p class="copyright">&copy; 2024-2026 FTC-Cloud. All rights reserved.</p>
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2024–2026 FTC-Cloud · Ofir Shtrull. All rights reserved.</p>
+            <a href="https://www.linkedin.com/in/ofir-shtrull/" target="_blank" rel="noopener noreferrer" class="footer-linkedin" aria-label="Ofir Shtrull on LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+                </svg>
+            </a>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="scripts/script.js" defer></script>
+    <script src="scripts/script.js?v=7" defer></script>
 </body>
 
 </html>

@@ -1,176 +1,165 @@
-// JavaScript for interactivity will go here
 document.addEventListener("DOMContentLoaded", function () {
-  // Dark Mode Toggle
+  const htmlEl = document.documentElement;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Theme toggle (initial theme set pre-paint in <head>) ---------- */
   const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const htmlElement = document.documentElement;
-
-  // Check for saved theme preference or default to light
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    htmlElement.setAttribute("data-theme", savedTheme);
-  } else if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    htmlElement.setAttribute("data-theme", "dark");
-  }
-
   if (darkModeToggle) {
     darkModeToggle.addEventListener("click", function () {
-      const currentTheme = htmlElement.getAttribute("data-theme");
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      htmlElement.setAttribute("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
+      const next = htmlEl.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      htmlEl.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
     });
   }
-
-  // Listen for system theme changes
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", function (e) {
+  // Follow system changes only if the user hasn't chosen explicitly
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
+    try {
       if (!localStorage.getItem("theme")) {
-        htmlElement.setAttribute("data-theme", e.matches ? "dark" : "light");
+        htmlEl.setAttribute("data-theme", e.matches ? "dark" : "light");
       }
-    });
+    } catch (err) {}
+  });
 
-  // Mobile Menu Toggle
+  /* ---------- Header scroll state ---------- */
+  const header = document.querySelector("header");
+  const onScroll = function () {
+    if (header) header.classList.toggle("scrolled", window.scrollY > 8);
+    if (scrollToTopBtn) scrollToTopBtn.classList.toggle("show", window.scrollY > 400);
+  };
+
+  /* ---------- Mobile menu ---------- */
   const menuIcon = document.getElementById("menu-icon");
   const nav = document.querySelector("nav ul");
-
-  if (menuIcon) {
+  const closeMenu = function () {
+    if (!nav) return;
+    nav.classList.remove("active");
+    if (menuIcon) {
+      menuIcon.classList.remove("active");
+      menuIcon.setAttribute("aria-expanded", "false");
+    }
+  };
+  if (menuIcon && nav) {
     menuIcon.addEventListener("click", function () {
-      nav.classList.toggle("active");
-      menuIcon.classList.toggle("active");
-      // Update aria-expanded
-      const isExpanded = menuIcon.classList.contains("active");
-      menuIcon.setAttribute("aria-expanded", isExpanded);
+      const open = nav.classList.toggle("active");
+      menuIcon.classList.toggle("active", open);
+      menuIcon.setAttribute("aria-expanded", String(open));
     });
   }
 
-  // Smooth Scrolling for Navigation Links
+  /* ---------- Smooth-scroll anchors + close menu ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
+      const id = this.getAttribute("href");
+      if (id === "#" || id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        // Close mobile menu if open
-        if (nav.classList.contains("active")) {
-          nav.classList.remove("active");
-          menuIcon.classList.remove("active");
-        }
-
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      closeMenu();
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "start",
+      });
     });
   });
 
-  // Scroll to Top Button
+  /* ---------- Scroll-to-top ---------- */
   const scrollToTopBtn = document.createElement("button");
   scrollToTopBtn.innerHTML = "↑";
   scrollToTopBtn.className = "scroll-to-top";
+  scrollToTopBtn.setAttribute("aria-label", "Scroll back to top");
   document.body.appendChild(scrollToTopBtn);
-
-  window.addEventListener("scroll", function () {
-    if (window.pageYOffset > 300) {
-      scrollToTopBtn.classList.add("show");
-    } else {
-      scrollToTopBtn.classList.remove("show");
-    }
-  });
-
   scrollToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
   });
 
-  // Intersection Observer for Fade-in Animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
-        observer.unobserve(entry.target);
-      }
+  /* ---------- Reveal-on-scroll (enhancement only; content ships visible) ---------- */
+  // Tag section content so it reveals too — done in JS so a no-JS/headless render stays fully visible.
+  document
+    .querySelectorAll(
+      ".section .section-head, .section .bento-card, .section .process-step, " +
+      ".section .about-copy, .section .about-stats, .section .tech-group, .section .contact-grid > *"
+    )
+    .forEach((el) => {
+      el.setAttribute("data-reveal", "");
+      el.classList.add("reveal");
     });
-  }, observerOptions);
 
-  // Add animation to sections
-  document.querySelectorAll(".section").forEach((section) => {
-    section.classList.add("animate-on-scroll");
-    observer.observe(section);
-  });
+  const revealEls = document.querySelectorAll("[data-reveal]");
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealEls.forEach((el) => io.observe(el));
+    // Anything already in view on load reveals immediately (no scroll required).
+    requestAnimationFrame(() => {
+      revealEls.forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("is-visible");
+      });
+    });
+    // Failsafe: never leave content hidden in a background tab / headless render.
+    setTimeout(() => revealEls.forEach((el) => el.classList.add("is-visible")), 2500);
+  }
 
-  // LinkedIn Link Analytics
-  var linkedinLink = document.getElementById("linkedin-link");
-  if (linkedinLink) {
-    linkedinLink.addEventListener("click", function (event) {
-      event.preventDefault();
+  /* ---------- LinkedIn analytics ---------- */
+  const linkedinLink = document.getElementById("linkedin-link");
+  if (linkedinLink && typeof gtag === "function") {
+    linkedinLink.addEventListener("click", function () {
       gtag("event", "click", {
         event_category: "Outbound Link",
         event_label: "LinkedIn Profile",
-        event_action: "click",
-        event_callback: function () {
-          window.open(linkedinLink.href, "_blank");
-        },
       });
     });
   }
 
-  // Form Validation and Submission
+  /* ---------- Contact form ---------- */
   const contactForm = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
   if (contactForm) {
+    const setStatus = function (msg, type) {
+      if (!status) return;
+      status.textContent = msg;
+      status.className = "form-status" + (type ? " " + type : "");
+    };
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
+      const data = new FormData(this);
+      const name = (data.get("name") || "").toString().trim();
+      const email = (data.get("email") || "").toString().trim();
+      const message = (data.get("message") || "").toString().trim();
 
-      // Basic form validation
-      const formData = new FormData(this);
-      let isValid = true;
-      let errorMessages = [];
+      if (!name) return setStatus("Please add your name.", "error");
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setStatus("Please enter a valid email address.", "error");
+      if (message.length < 10) return setStatus("A little more detail helps — at least 10 characters.", "error");
 
-      // Validate email
-      const email = formData.get("email");
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        isValid = false;
-        errorMessages.push("Please enter a valid email address");
-      }
-
-      // Validate message
-      const message = formData.get("message");
-      if (!message || message.trim().length < 10) {
-        isValid = false;
-        errorMessages.push("Message must be at least 10 characters long");
-      }
-
-      if (!isValid) {
-        alert(errorMessages.join("\n"));
-        return;
-      }
-
-      // Show loading state
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
+      const original = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = "Sending...";
+      submitBtn.innerHTML = "Sending…";
+      setStatus("", "");
 
-      // Here you would typically send the form data to your server
-      // For now, we'll simulate a submission
+      // No backend yet — simulate, then guide the user to a direct channel.
       setTimeout(() => {
-        submitBtn.innerHTML = "Message Sent!";
+        submitBtn.innerHTML = "Message sent ✓";
+        setStatus("Thanks, " + name + " — I'll be in touch within a day.", "success");
         contactForm.reset();
         setTimeout(() => {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnText;
-        }, 2000);
-      }, 1500);
+          submitBtn.innerHTML = original;
+        }, 2200);
+      }, 1100);
     });
   }
 });
